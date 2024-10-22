@@ -86,7 +86,7 @@ section span i {
 section .banner {
     width: 100%;
     height: auto;
-    padding: 3rem 0;
+    padding: 5rem 0;
     z-index: 111;
     flex-direction: column;
     gap: 5rem;
