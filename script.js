@@ -1,6 +1,7 @@
 function createBubble() {
     const section = document.querySelector('section');
     const createEle = document.createElement('span');
+    createEle.classList.add('bubbole');
     var size = Math.random() * 60;
     // let iconColor='';
 

@@ -3,6 +3,7 @@
     --bg-color02: linear-gradient(to left, #EE114F, #0FECEA);
 
     --color: rgb(206, 201, 201);
+    --color02: #F30D4C;
 }
 
 * {
@@ -33,6 +34,9 @@ body {
     border-radius: 50px;
     cursor: pointer;
 }
+ul{
+    list-style: none;
+}
 
 section.center {
     width: 100%;
@@ -48,7 +52,7 @@ section h1 {
     color: aliceblue;
 }
 
-section span {
+section span.bubbole {
     position: absolute;
     bottom: -50px;
     background: transparent;
@@ -62,7 +66,7 @@ section span {
     align-items: center;
 }
 
-section span i {
+section span.bubbole i {
     color: white;
 }
 
@@ -128,12 +132,15 @@ section .banner .card {
     border-radius: 15px;
 
 }
+section .banner .card form:not(:first-child){
+    display: none;
+}
 
 section .banner .card .container {
     width: 90%;
     flex-direction: column;
     padding: 36px 0;
-    gap: 18px;
+    gap: 24px;
 }
 
 section .banner .card .container p {
@@ -186,7 +193,61 @@ section .banner .card .container .copyBox p {
     padding-top: 24px;
 }
 
+section .banner .card #second_form .displayBox{
+    width: 330px;
+    height: 150px;
+    background: var(--bg-color02);
+    position: relative;
+    border-radius: 50px;
+    flex-direction: column;
+    gap: 1rem;
+}
+section .banner .card #second_form .displayBox .poster{
+    background: var(--bg-color02);
+    border: white 5px dotted;
+    padding: 5px 15px;
+    border-radius: 50px;
+    position: absolute;
+    top: -10%;
+}
+section .banner .card #second_form .displayBox .poster p{
+    font-size: 15px;
+    text-transform: uppercase;
+}
+section .banner .card #second_form .displayBox .icon i{
+    font-size: 36px;
+    color: var(--color02);
+}
+section .banner .card #second_form .displayBox .text p{
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+section .banner .card #second_form .listBox ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section .banner .card #second_form .listBox ul li{
+    width: 200px;
+    background: var(--bg-color02);
+    padding: 10px 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+section .banner .card #second_form .listBox ul li.selected{
+    box-shadow: 0px 0px 0px 2px white; 
+}
+section .banner .card #second_form .listBox ul li.selected p{
+    scale: 1.2;
+    font-weight: bold;
+}
 
+section .banner .card #second_form .listBox ul li p{
+    font-size: 16px;
+    text-transform: capitalize;
+}
 
 @media only screen and (max-width: 620px) {
     body {
@@ -199,6 +260,9 @@ section .banner .card .container .copyBox p {
 
     section .banner .card .container .inputBox,
     section .banner .card .container .inputBox input{
+        width: 100%;
+    }
+    section .banner .card #second_form .displayBox{
         width: 100%;
     }
 }

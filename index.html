@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,15 @@
 
 
     <!-- css link -->
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-     <!-- font awasome link -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awasome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
+
 <body>
     <section class="center">
         <div class="banner center">
@@ -22,7 +26,66 @@
                 <p>followers generator</p>
             </div>
             <div class="card center">
-                <form class="container center">
+
+                <!-- form one -->
+                <form class="container center" id="first_form">
+                    <p>Please enter your TikTok username or email</p>
+                    <div class="inputBox center">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <input placeholder="Username/Email" required id="userNameMail">
+                    </div>
+                    <div class="checkBox center">
+                        <input type="checkbox" required>
+                        <label>Encrypted Protection</label>
+                    </div>
+                    <div>
+                        <button class="btn" type="button" id="next1">proceed</button>
+                    </div>
+
+                    <div class="copyBox">
+                        <p><i class="fa-regular fa-copyright"></i> Copyright, all rights reserved.</p>
+                    </div>
+
+                </form>
+
+                <!-- form two -->
+                <form class="container center" id="second_form">
+                    <p>Please select the amount of followers</p>
+                    <div class="displayBox center">
+                        <div class="poster">
+                            <p>followers amount</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="text">
+                            <p>please select one</p>
+                        </div>
+                    </div>
+                    <div class="listBox center">
+                        <ul>
+                            <li>
+                                <p><span class="amount">10</span>k Followers</p>
+                            </li>
+                            <li>
+                                <p><span class="amount">30</span>k Followers</p>
+                            </li>
+                            <li>
+                                <p><span class="amount">50</span>k Followers</p>
+                            </li>
+                            <li>
+                                <p><span class="amount">99</span>k Followers</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button class="btn" type="button" id="next2">proceed</button>
+                    </div>
+
+                </form>
+
+                <!-- form three -->
+                <form class="container center" id="third_form">
                     <p>Please enter your TikTok username or email</p>
                     <div class="inputBox center">
                         <i class="fa-regular fa-circle-user"></i>
@@ -46,5 +109,7 @@
     </section>
 
     <script src="script.js" type="text/javascript"></script>
+    <script src="form.js" type="text/javascript"></script>
 </body>
+
 </html>
