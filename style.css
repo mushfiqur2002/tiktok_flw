@@ -4,6 +4,7 @@
 
     --color: rgb(206, 201, 201);
     --color02: #F30D4C;
+    --color03: #27E2DA;
 }
 
 * {
@@ -132,7 +133,7 @@ section .banner .card {
     border-radius: 15px;
 
 }
-section .banner .card form:not(:first-child){
+section .banner .card div.container:not(:first-child){
     display: none;
 }
 
@@ -247,6 +248,27 @@ section .banner .card #second_form .listBox ul li.selected p{
 section .banner .card #second_form .listBox ul li p{
     font-size: 16px;
     text-transform: capitalize;
+}
+
+section .banner .card #third_form p:first-child{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+section .banner .card #third_form p:nth-child(2){
+    font-size: 20px;
+    color: var(--color);
+}
+section .banner .card #third_form p:nth-child(2) span{
+    color: var(--color03);
+    font-weight: bolder;
+}
+
+section .banner .card .container .inputBox{
+    background: var(--color);
+}
+section .banner .card .container .inputBox input,
+section .banner .card .container .inputBox input::placeholder{
+    color: var(--bg-color);
 }
 
 @media only screen and (max-width: 620px) {

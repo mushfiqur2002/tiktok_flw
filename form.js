@@ -2,39 +2,52 @@ const displayText = document.querySelector(".displayBox .text p");
 const listItems = document.querySelectorAll(".listBox ul li");
 const next1Button = document.querySelector("#next1");
 const next2Button = document.querySelector("#next2");
-let selectedItem = null;
+const submitButton = document.querySelector("#submitBtn");
 const userNameMail = document.getElementById("userNameMail");
+const verification = document.getElementById("verification");
+const checkbox = document.getElementById("checkbox");
+const forms = document.querySelectorAll(".banner .card .container");
+const userName = document.querySelector(".userName");
+const followerAmount = document.querySelector(".followAmount");
+
+let selectedItem = null;
+const userDtls = {};
+
+// Function to display a specific form step
+function showFormStep(stepIndex) {
+    forms.forEach((form, index) => {
+        form.style.display = index === stepIndex ? "flex" : "none";
+    });
+}
 
 // Move to form 2
 next1Button.addEventListener("click", () => {
-    if (userNameMail.value.trim() === "") { // Check the value of userNameMail input
+    const userInput = userNameMail.value.trim();
+
+    if (userInput === "") {
         alert("Please fill in the form first");
-    } else if (userNameMail.value.trim() !== "userN" && userNameMail.value.trim() !== "user@gmail.com") {
-        alert("Your input information is not correct");
+    }
+    // else if (userInput !== "userN" && userInput !== "user@gmail.com") {
+    //     alert("Your input information is not correct");
+    // }
+    else if (!checkbox.checked) {
+        alert("Please check the checkbox.");
     } else {
-        console.log(userNameMail.value);
-        
-        // Show only form 2 and hide others
-        const forms = document.querySelectorAll(".banner .card form");
-        forms.forEach((form, index) => {
-            form.style.display = index === 1 ? "flex" : "none"; // Display form 2 only
-        });
+        userDtls.name = userInput;  // Store username/email in userDtls
+        showFormStep(1);            // Show form 2
     }
 });
 
 // Item selection in form 2
 listItems.forEach((item) => {
     item.addEventListener("click", () => {
-        // Remove "selected" from all items
+        // Remove "selected" from all items and apply to the clicked one
         listItems.forEach((li) => li.classList.remove("selected"));
-
-        // Update selected item and apply "selected" class
-        selectedItem = item;
         item.classList.add("selected");
 
-        // Update display box with selected item text
-        const amountText = item.querySelector(".amount").textContent;
-        displayText.textContent = `${amountText}k followers`;
+        // Update selected item and display box text
+        selectedItem = item.querySelector(".amount").textContent;
+        displayText.textContent = `${selectedItem}k followers`;
     });
 });
 
@@ -43,10 +56,31 @@ next2Button.addEventListener("click", () => {
     if (selectedItem === null) {
         alert("Please select one item at least");
     } else {
-        // Show only form 3 and hide others
-        const forms = document.querySelectorAll(".banner .card form");
-        forms.forEach((form, index) => {
-            form.style.display = index === 2 ? "flex" : "none"; // Display form 3 only
-        });
+        userDtls.followersAmount = selectedItem;
+        showFormStep(2);
+        console.log(selectedItem)
+        console.log(userDtls)
+        userName.innerHTML = userDtls.name;
+        followerAmount.innerHTML = userDtls.followersAmount;
+        console.log(followerAmount,userName)
     }
 });
+
+
+submitButton.addEventListener('click', function(event) {
+    // Prevent the form from submitting
+    event.preventDefault();
+    
+    const verificationCode = verification.value.trim();
+    
+    if (verificationCode === "") {
+        alert('Please input the verification code');
+    } else {
+        // Form can be submitted
+        alert('successfully submited');
+    }
+});
+
+
+// Output user details to console (Optional)
+console.log("userDtls:", userDtls);

